@@ -63,6 +63,7 @@ function App() {
   );
 }  
 
+export default App;
 
 /*
 weather app 
@@ -71,4 +72,3 @@ cd weather-app
 npm start
 */
 
-export default App;
