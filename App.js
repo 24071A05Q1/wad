@@ -61,6 +61,14 @@ function App() {
       )}
     </div>
   );
-}
+}  
+
+
+/*
+weather app 
+
+cd weather-app
+npm start
+*/
 
 export default App;
