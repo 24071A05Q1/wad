@@ -1,23 +1,60 @@
-<?xml version="1.0"?>
+bookstore.dtd
+<!ELEMENT bookstore (book+)>
+<!-- Allow namespace attributes so DTD doesn't complain -->
+<!ATTLIST bookstore
+ xmlns:xsi CDATA #IMPLIED
+ xsi:noNamespaceSchemaLocation CDATA #IMPLIED>
+<!ELEMENT book (title, author, year, price)>
+<!ATTLIST book category CDATA #REQUIRED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
 
-<!DOCTYPE bookstore [
-    <!ELEMENT bookstore (book+)>
-    <!ELEMENT book (title, author, price)>
-    <!ELEMENT title (#PCDATA)>
-    <!ELEMENT author (#PCDATA)>
-    <!ELEMENT price (#PCDATA)>
-]>
 
-<bookstore>
-    <book>
-        <title>Java Basics</title>
-        <author>James</author>
-        <price>500</price>
-    </book>
 
-    <book>
-        <title>Web Dev</title>
-        <author>John</author>
-        <price>400</price>
-    </book>
+
+
+bookstore.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore SYSTEM "bookstore.dtd">
+<bookstore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="bookstore.xsd">
+ <book category="programming">
+ <title>Java Fundamentals</title>
+ <author>James Gosling</author>
+ <year>2022</year>
+ <price>599.50</price>
+ </book>
+ <book category="database">
+ <title>Mastering MySQL</title>
+ <author>Michael Widenius</author>
+ <year>2021</year>
+ <price>450.00</price>
+ </book>
 </bookstore>
+
+
+
+
+bookstore.xsd
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore SYSTEM "bookstore.dtd">
+<bookstore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="bookstore.xsd">
+ <book category="programming">
+ <title>Java Fundamentals</title>
+ <author>James Gosling</author>
+ <year>2022</year>
+ <price>599.50</price>
+ </book>
+ <book category="database">
+ <title>Mastering MySQL</title>
+ <author>Michael Widenius</author>
+ <year>2021</year>
+ <price>450.00</price>
+ </book>
+</bookstore>
+
+
+
