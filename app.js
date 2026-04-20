@@ -1,6 +1,15 @@
 const express = require("express");
 const app = express();
+// postman  
 
+
+/*cmd prmt:mkdir exp10
+cd exp10
+npm init -y
+npm install express*/
+
+/*cmd prmt: node app.js*/
+/*all in app.js*/
 app.use(express.json());
 
 // In-memory database (array)
